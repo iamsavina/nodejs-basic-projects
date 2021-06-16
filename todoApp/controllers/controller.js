@@ -39,6 +39,7 @@ const deleteDo = (req,res)=>{
     const task = currentList.find((tasks)=> tasks.id === Number(req.params.id))
     if (!task){
         //no task
+        return res.status(404).json({status:"failed",error:"task id not found"})
     }
 
     currentList = currentList.filter(
