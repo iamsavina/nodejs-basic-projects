@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: blogAPI
+    environment:
+      MYSQL_ROOT_PASSWORD: strong_password
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user_pass
+    ports:
+      - "6035:3306"
+    volumes:
+      - ./data/db:/var/lib/mysql
